@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>SmartWatch UI</title>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Bad+Script|Roboto+Slab:100,300,400" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+      <link rel="stylesheet" href="watch.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <div class="band">
+      <div class="spinner">
+        <div class="spinnerContainer active common">
+            <div class="spinner-layer layer-1 common">
+                <div class="circle-clipper left common">
+                    <div class="circle common" style="border-width:3px;"></div>
+                </div><div class="gap-patch common"><div class="circle common" style="border-width:3px;"></div></div><div class="circle-clipper right common"><div class="circle common" style="border-width:3px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="display">
+
+      
+
+
+        <div class="time" id="time">13:37</div>
+
+        <span id="degree">29°</span>
+        <span id="humidity">85% <span>humidity</span></span>
+        <span id="weather"></span>
+        <span class="location" id="location">san francisco</span>
+        <span class="motto">feeling awesome</span>
+
+
+
+          
+      </div>
+      <div class="mainbtn"></div>
+      </div>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="jquery.simpleWeather.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+      <script src="watch.js"></script>
+    </body>
+  </html>

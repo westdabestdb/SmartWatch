@@ -1,0 +1,328 @@
+@font-face {
+    font-family: 'weather';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot');
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.woff') format('woff'),
+         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.ttf') format('truetype'),
+         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/93/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	height: 100%;
+    min-height: 100vh;
+	background: #70e1f5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Roboto Slab', serif;
+}
+.band {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 500px;
+    width: 100px;
+    background-color: #202c3b;
+    border-radius: 8px;
+}
+.display {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 220px;
+    height: 220px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+    border: 3px solid #607D8B;
+    z-index: 999!important;
+    transition: background-color 1500ms;
+}
+
+.display * {
+    display: none;
+}
+.mainbtn {
+    position: absolute;
+    left: 100%;
+    margin-left: 56px;
+    top: 50%;
+    transform: translate(0,-50%);
+    height: 24px;
+    width: 10px;
+    border: 2px solid #607D8B;
+    background-color: #CFD8DC;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    z-index: 99!important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.time {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translate(-50%,-50%);
+    color: #fff;
+}
+#weather {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 64px;
+}
+#degree {
+    position: absolute;
+    left: 36px;
+    line-height: 64px;
+    color: #fff;
+    font-weight: 100;
+    top: 50%;
+    padding-top: 12px;
+    transform: translate(-50%,-50%);
+    font-size: 28px;
+}
+.location {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    transform: translate(-50%,-50%);
+}
+.motto {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 10px;
+    transform: translate(-50%,-50%);
+    font-family: 'Bad Script', cursive;
+
+}
+#humidity {
+    position: absolute;
+    right: -5px;
+    color: #fff;
+    font-weight: 100;
+    top: 50%;
+    padding-top: 10px;
+    transform: translate(-50%,-50%);
+    font-size: 16px;
+    text-align: center;
+}
+#humidity span {
+    margin-top: -5px;
+    font-size: 8px;
+    display: block;
+    text-align: center;
+}
+
+i {
+  color: #fff;
+  font-family: weather;
+  font-size: 64px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.0;
+  text-align: center;
+}
+
+.icon-0:before { content: ":"; }
+.icon-1:before { content: "p"; }
+.icon-2:before { content: "S"; }
+.icon-3:before { content: "Q"; }
+.icon-4:before { content: "S"; }
+.icon-5:before { content: "W"; }
+.icon-6:before { content: "W"; }
+.icon-7:before { content: "W"; }
+.icon-8:before { content: "W"; }
+.icon-9:before { content: "I"; }
+.icon-10:before { content: "W"; }
+.icon-11:before { content: "I"; }
+.icon-12:before { content: "I"; }
+.icon-13:before { content: "I"; }
+.icon-14:before { content: "I"; }
+.icon-15:before { content: "W"; }
+.icon-16:before { content: "I"; }
+.icon-17:before { content: "W"; }
+.icon-18:before { content: "U"; }
+.icon-19:before { content: "Z"; }
+.icon-20:before { content: "Z"; }
+.icon-21:before { content: "Z"; }
+.icon-22:before { content: "Z"; }
+.icon-23:before { content: "Z"; }
+.icon-24:before { content: "E"; }
+.icon-25:before { content: "E"; }
+.icon-26:before { content: "3"; }
+.icon-27:before { content: "a"; }
+.icon-28:before { content: "A"; }
+.icon-29:before { content: "a"; }
+.icon-30:before { content: "A"; }
+.icon-31:before { content: "6"; }
+.icon-32:before { content: "1"; }
+.icon-33:before { content: "6"; }
+.icon-34:before { content: "1"; }
+.icon-35:before { content: "W"; }
+.icon-36:before { content: "1"; }
+.icon-37:before { content: "S"; }
+.icon-38:before { content: "S"; }
+.icon-39:before { content: "S"; }
+.icon-40:before { content: "M"; }
+.icon-41:before { content: "W"; }
+.icon-42:before { content: "I"; }
+.icon-43:before { content: "W"; }
+.icon-44:before { content: "a"; }
+.icon-45:before { content: "S"; }
+.icon-46:before { content: "U"; }
+.icon-47:before { content: "S"; }
+
+.common {
+    display: inline-block;
+    position: relative;
+}
+.spinner{
+    width:28px;
+    height:28px;
+    display:inline-block;
+    text-align:initial;
+    color:#202c3b !important;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    z-index: 99999 !important;
+}
+.spinnerContainer {
+    width: 100%;
+    height: 100%;
+    direction: ltr;
+}
+.spinnerContainer.active {
+    animation: container-rotate 1568ms linear infinite;
+}
+@keyframes container-rotate {
+    to {
+        transform: rotate(360deg)
+    }
+}
+.spinner-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-color: #202c3b !important;
+}
+.active .spinner-layer.layer-1 {
+    animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0.0, 0.2, 1) infinite both;
+}
+
+
+@keyframes fill-unfill-rotate {
+    12.5% {
+        transform: rotate(135deg);
+    }
+    25% {
+        transform: rotate(270deg);
+    }
+    37.5% {
+        transform: rotate(405deg);
+    }
+    50% {
+        transform: rotate(540deg);
+    }
+    62.5% {
+        transform: rotate(675deg);
+    }
+    75% {
+        transform: rotate(810deg);
+    }
+    87.5% {
+        transform: rotate(945deg);
+    }
+    to {
+        transform: rotate(1080deg);
+    }
+}
+
+
+.gap-patch {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 45%;
+    width: 10%;
+    height: 100%;
+    overflow: hidden;
+    border-color: inherit;
+}
+.gap-patch .circle {
+    width: 1000%;
+    left: -450%;
+}
+.circle-clipper {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-color: inherit;
+}
+.circle-clipper .circle {
+    width: 200%;
+}
+.circle {
+    box-sizing: border-box;
+    height: 100%;
+    border-style: solid;
+    border-color: inherit;
+    border-bottom-color: transparent !important;
+    border-radius: 50%;
+    animation: none;
+}
+.circle-clipper.left .circle {
+    border-right-color: transparent !important;
+    transform: rotate(129deg);
+}
+.circle-clipper.right .circle {
+    left: -100%;
+    border-left-color: transparent !important;
+    transform: rotate(-129deg);
+}
+.active .circle-clipper.left .circle {
+    animation: left-spin 1333ms cubic-bezier(0.4, 0.0, 0.2, 1) infinite both;
+}
+.active .circle-clipper.right .circle {
+    animation: right-spin 1333ms cubic-bezier(0.4, 0.0, 0.2, 1) infinite both;
+}
+
+@keyframes left-spin {
+    from {
+        transform: rotate(130deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(130deg);
+    }
+}
+
+@keyframes right-spin {
+    from {
+        transform: rotate(-130deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    to {
+        transform: rotate(-130deg);
+    }
+}
